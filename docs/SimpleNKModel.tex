@@ -1,0 +1,482 @@
+%% LyX 2.2.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=3cm}
+\usepackage{amsmath}
+\usepackage{babel}
+\begin{document}
+
+\title{A Simple New Keynesian Model}
+\maketitle
+
+\section{Household}
+
+The household problem is
+\begin{equation}
+\max E_{t}\sum_{j=0}^{\infty}d_{t,t+j}\left(\log\left(C_{t+j}\right)-\frac{\chi}{1+\varphi}N_{t+j}^{1+\varphi}+\upsilon\frac{\left(\max\left(\frac{M_{t}^{d}}{P_{t}},m\right)\right)^{1-\sigma_{q}}}{1-\sigma_{q}}\right)\label{eq:Preferences}
+\end{equation}
+where $C_{t}$ is consumption, $N_{t}$ is hours worked, $\frac{M_{t}^{d}}{P_{t}}$
+is real money balances held by the household and
+\[
+d_{t,t+j}=\prod_{i=0}^{j}\beta_{t+i-1}.
+\]
+We assume that
+\[
+\log\left(\frac{\beta_{t}}{\beta}\right)=\rho_{\beta}\log\left(\frac{\beta_{t-1}}{\beta}\right)+\sigma_{\beta}\varepsilon_{\beta,t}.
+\]
+The budget constraint is
+\begin{equation}
+B_{t+1}+P_{t}C_{t}+M_{t}^{d}=R_{t-1}B_{t}+W_{t}N_{t}+T_{t}+M_{t-1}^{d}\label{eq:Budget Constraint}
+\end{equation}
+where and $B_{t}$ are balances of nominal bonds, $P_{t}$ is the
+price of final goods in the home country, $R_{t}$ is the nominal
+interest rate on bonds, $W_{t}$ is the wage rate, and $T_{t}$ are
+lump-sum profits, transfers, and taxes. The first-order conditions
+are
+\begin{equation}
+\left(C_{t}\right)^{-1}=\Lambda_{t}\label{eq:Marginal Utility of Consumption}
+\end{equation}
+\begin{equation}
+\chi N_{t}^{\varphi}=\Lambda_{t}\frac{W_{t}}{P_{t}}\label{eq:Labor Leisure Tradeoff}
+\end{equation}
+\begin{equation}
+\Lambda_{t}=\beta_{t}R_{t}E_{t}\frac{\Lambda_{t+1}}{\pi_{t+1}}\label{eq:Intertemporal Euler Equation}
+\end{equation}
+If we assume that real money balances are less than $m$, then
+\begin{equation}
+\upsilon\left(\frac{M_{t}^{d}}{P_{t}}\right)^{-\sigma_{q}}=\left(\frac{R_{t}-1}{R_{t}}\right)\Lambda_{t}\label{eq:Money Demand}
+\end{equation}
+where $\pi_{t}\equiv P_{t}/P_{t-1}$.
+
+\section{Retailers}
+
+Final output, $Y_{t}$, is produced by retailers who combine intermediate
+goods, $Y_{i,t}$, $i\in\left[0,1\right]$, according to a Dixit-Stiglitz
+aggregator, 
+\begin{equation}
+Y_{t}=\left(\int_{0}^{1}Y_{i,t}^{\frac{\varepsilon-1}{\varepsilon}}di\right)^{\frac{\varepsilon}{\varepsilon-1}},\label{eq:Dixit Stiglitz}
+\end{equation}
+where $\varepsilon>1$. Profits of the retailers are given by
+\begin{equation}
+Y_{t}P_{t}-\int_{0}^{1}Y_{i,t}P_{i,t}di=\left(\int_{0}^{1}Y_{i,t}^{\frac{\varepsilon-1}{\varepsilon}}di\right)^{\frac{\varepsilon}{\varepsilon-1}}P_{t}-\int_{0}^{1}Y_{i,t}P_{i,t}di\label{eq:Retailers Profits}
+\end{equation}
+Notice that the first-order condition with respect to $Y_{i,t}$ is
+\begin{eqnarray}
+P_{i,t} & = & \left(\int_{0}^{1}Y_{i,t}^{\frac{\varepsilon-1}{\varepsilon}}di\right)^{\frac{1}{\varepsilon-1}}Y_{i,t}^{\frac{-1}{\varepsilon}}P_{t},\label{eq:Retailers FONC}
+\end{eqnarray}
+which is rearranged (using the definition of $Y_{t}$) to give
+\begin{equation}
+Y_{i,t}=\left(\frac{P_{i,t}}{P_{t}}\right)^{-\varepsilon}Y_{t}.\label{eq:Demand Curves}
+\end{equation}
+There is free-entry for retailers, so profits must equal zero. Then
+\begin{equation}
+P_{t}=\int_{0}^{1}\frac{Y_{i,t}}{Y_{t}}P_{i,t}di=\int_{0}^{1}\left(\frac{P_{i,t}}{P_{t}}\right)^{-\varepsilon}P_{i,t}di=\left(\int_{0}^{1}P_{i,t}^{1-\varepsilon}di\right)^{\frac{1}{1-\varepsilon}}\label{eq:Price Index}
+\end{equation}
+
+\section{Intermediate Goods Firms}
+
+Monopolists produce intermediate goods. Monopolists produce with a
+linear production function 
+\begin{equation}
+Y_{i,t}=A_{t}N_{i,t}\label{eq:Production Technology}
+\end{equation}
+where $A_{t}$ is a productivity shifter that evolves so that
+\begin{equation}
+\log\left(a_{t}\right)=\mu_{A}\left(1-\rho_{A}\right)+\rho_{A}\log\left(a_{t-1}\right)+\epsilon_{A,t}.\label{eq:Technology Shock}
+\end{equation}
+where $a_{t}=\frac{A_{t}}{A_{t-1}}$. With the constant-returns-to-scale
+production function, real marginal cost, $s_{t}$, is given by the
+real wage divided by $A_{t}$, net of a subsidy, $\nu$ paid to firms
+to offset monopoly distortions in steady state,
+
+\begin{equation}
+\frac{W_{t}/P_{t}}{A_{t}}\left(1-\nu\right)=s_{t}.\label{eq:Real Marginal Cost}
+\end{equation}
+A fraction $1-\theta$ of monopolists can update their price in period
+$t$. The complementary fraction leave their price unchanged from
+the previous period. A firm updating its price picks $\tilde{P}_{i,t}$
+to solve
+\begin{equation}
+\max_{\tilde{P}_{i,t}}E_{t}\sum_{j=0}^{\infty}d_{t,t+j}\left(\theta\right)^{j}\Lambda_{t+j}\left(\frac{\tilde{P}_{i,t}}{P_{t+j}}-s_{t+j}\right)\left(\frac{\tilde{P}_{i,t}}{P_{t+j}}\right)^{-\varepsilon}Y_{t+j}.\label{eq:Optimal Pricing Objective}
+\end{equation}
+The first-order condition is
+\begin{equation}
+E_{t}\sum_{j=0}^{\infty}d_{t,t+j}\left(\theta\right)^{j}\Lambda_{t+j}\left(\frac{\tilde{P}_{i,t}}{P_{t+j}}-\frac{\varepsilon}{\varepsilon-1}s_{t+j}\right)\left(\frac{P_{t}}{P_{t+j}}\right)^{-\varepsilon}Y_{t+j}=0.\label{eq:Optimal Pricing FONC}
+\end{equation}
+Note that all monopolists who can update their price will pick the
+same price as nothing depends on $i$ in the first-order condition.
+Define $\tilde{p}_{t}\equiv\tilde{P}_{i,t}/P_{t}$. Then (\ref{eq:Optimal Pricing FONC})
+becomes 
+\begin{equation}
+E_{t}\sum_{j=0}^{\infty}d_{t,t+j}\left(\theta\right)^{j}\Lambda_{t+j}\left(\frac{\tilde{p}_{t}}{\Pi_{t,t+j}}-\frac{\varepsilon}{\varepsilon-1}s_{t+j}\right)\Pi_{t,t+j}^{\varepsilon}Y_{t+j}=0\label{eq:Optimal Pricing FONC 2}
+\end{equation}
+where $\Pi_{t,t+j}\equiv P_{t+j}/P_{t}=\prod_{k=1}^{j}\pi_{t+k}$
+for $j>0$, and $\Pi_{t,t}\equiv1$. It is sometimes usefule to write
+the first-order condition of the firm as
+\begin{align*}
+F_{1,t} & =\Lambda_{t}Y_{t}+\beta_{t}\theta E_{t}\pi_{t+1}^{\varepsilon-1}F_{1,t+1}\\
+F_{2,t} & =\Lambda_{t}Y_{t}s_{t}\frac{\varepsilon}{\varepsilon-1}+\beta_{t}\theta E_{t}\pi_{t+1}^{\varepsilon}F_{1,t+1}\\
+F_{1,t}\tilde{p}_{t} & =F_{2,t}
+\end{align*}
+
+\section{Government Policy}
+
+To close the model, specify the interest rate so that
+\begin{equation}
+R_{t}=R\pi_{t}^{\phi_{\pi}}\exp\left(\epsilon_{R,t}\right).\label{eq:Taylor Rule}
+\end{equation}
+The money supply is set to satisfy money demand, given (\ref{eq:Money Demand}).
+Government consumption is set so that
+\begin{equation}
+\log\left(\frac{G_{t}}{G}\right)=\rho_{G}\log\left(\frac{G_{t-1}}{G}\right)+\epsilon_{G,t}.\label{eq:Evolution of G}
+\end{equation}
+ The government budget constraint is
+\begin{equation}
+P_{t}G_{t}+\nu W_{t}N_{t}+R_{t-1}B_{t}-T_{t}=B_{t+1}.\label{eq:Government Budget Constraint}
+\end{equation}
+Assume that in each period bonds are in zero net supply ($B_{t}=0$).
+
+\section{Price evolution, market clearing, and aggregation}
+
+From (\ref{eq:Price Index}) prices evolve so that
+\[
+P_{t}=\left(\int_{0}^{1}P_{i,t}^{1-\epsilon}di\right)^{\frac{1}{1-\varepsilon}}=\left(\left(1-\theta\right)\tilde{P}_{t}^{1-\varepsilon}+\theta\int_{0}^{1}P_{i,t-1}^{1-\varepsilon}di\right)^{\frac{1}{1-\varepsilon}}=\left(\left(1-\theta\right)\tilde{P}_{t}^{1-\varepsilon}+\theta P_{t-1}^{1-\varepsilon}\right)^{\frac{1}{1-\varepsilon}}.
+\]
+Then
+\[
+1=\left(\left(1-\theta\right)\tilde{p}_{t}^{1-\varepsilon}+\theta\pi_{t}^{\varepsilon-1}\right)^{\frac{1}{1-\varepsilon}},
+\]
+where $\tilde{p}_{t}\equiv\tilde{P}_{t}/P_{t}$, which means
+\begin{equation}
+\tilde{p}_{t}=\left(\frac{1-\theta\pi_{t}^{\varepsilon-1}}{1-\theta}\right)^{\frac{1}{1-\varepsilon}}.\label{eq:relationship between ptilde and inflation}
+\end{equation}
+Market clearing in the labor market implies
+\begin{equation}
+N_{t}=\int_{0}^{1}N_{i,t}di.\label{eq:Labor-Market Clearning}
+\end{equation}
+Combining with (\ref{eq:Production Technology})
+\[
+A_{t}N_{t}=\int_{0}^{1}Y_{i,t}di=\int_{0}^{1}\left(\frac{P_{i,t}}{P_{t}}\right)^{-\varepsilon}Y_{t}di.
+\]
+Define 
+\begin{equation}
+p_{t}^{*}\equiv\left(\int_{0}^{1}\left(\frac{P_{i,t}}{P_{t}}\right)^{-\varepsilon}di\right)^{-1}\label{eq:pstar}
+\end{equation}
+so that
+\begin{equation}
+Y_{t}=p_{t}^{*}A_{t}N_{t}.\label{eq:Aggregate Production Technology}
+\end{equation}
+Note that
+\begin{equation}
+p_{t}^{*}=\left(\left(1-\theta\right)\tilde{p}_{t}^{-\varepsilon}+\theta\int_{0}^{1}\left(\frac{P_{i,t-1}}{P_{t-1}}\frac{P_{t-1}}{P_{t}}\right)^{-\varepsilon}di\right)^{-1}=\left(\left(1-\theta\right)\tilde{p}_{t}^{-\varepsilon}+\theta\pi_{t}^{\varepsilon}\left(p_{t-1}^{*}\right)^{-1}\right)^{-1}.\label{eq:pstar evolution}
+\end{equation}
+The resource constraint is
+\begin{equation}
+C_{t}+G_{t}=Y_{t}.\label{eq:Resource Constraint}
+\end{equation}
+
+\section{Equilibrium}
+
+The 12 unknown aggregate variables are $C_{t}$, $N_{t}$, $Y_{t}$,
+$m_{t}^{d}\equiv M_{t}^{d}/P_{t}$, $w_{t}\equiv W_{t}/P_{t}$, $\pi_{t}$,
+$\Lambda_{t}$, $R_{t}$, $s_{t}$, $\tilde{p}_{t}$, $p_{t}^{*}$,
+and $T_{t}$. We determine these varibles with equations (\ref{eq:Marginal Utility of Consumption}),
+(\ref{eq:Labor Leisure Tradeoff}), (\ref{eq:Intertemporal Euler Equation}),
+(\ref{eq:Money Demand}), (\ref{eq:Real Marginal Cost}), (\ref{eq:Optimal Pricing FONC 2}),
+(\ref{eq:Taylor Rule}), (\ref{eq:Government Budget Constraint}),
+(\ref{eq:relationship between ptilde and inflation}), (\ref{eq:Aggregate Production Technology}),
+(\ref{eq:pstar evolution}), and (\ref{eq:Resource Constraint}).
+Note that we do not include the household budget constraint, (\ref{eq:Budget Constraint}),
+in the set of equilibrium conditions because of Walras' Law. Also,
+$T_{t}$ appears only in (\ref{eq:Government Budget Constraint}),
+and we assume it is set to satisfy this equation on a per-period basis,
+along with our assumption that $B_{t}=0$.\footnote{The assumption that $B_{t}=0$ is stronger than necessary. The path
+for $B_{t}$ can be any bounded path, so long as $T_{t}$ makes (\ref{eq:Government Budget Constraint})
+hold period-by-period.} As such, we can eliminate $T_{t}$ from the unknown aggregate variables,
+along with equation (\ref{eq:Government Budget Constraint}). Similarly,
+$m_{t}^{d}$ appears only in equation (\ref{eq:Money Demand}), and
+we eliminate both.
+
+The exogenous variables, $A_{t}$ and $G_{t}$, evolve according to
+(\ref{eq:Technology Shock}) and (\ref{eq:Evolution of G}). The shocks,
+$\epsilon_{A,t}$, $\epsilon_{G,t}$, and $\epsilon_{R,t}$ , are
+normally distributed with standard deviations $\sigma_{A}$, $\sigma_{G}$,
+and $\sigma_{R}$ , respectively.
+
+\section{Steady State}
+
+Consider a steady state where inflation is equal to target inflation,
+$\pi=1$. From (\ref{eq:relationship between ptilde and inflation})
+and (\ref{eq:pstar}), $\tilde{p}=p^{*}=1$. From (\ref{eq:Intertemporal Euler Equation}),
+$R=a\beta^{-1}$. Assume that $G=\eta_{G}Y$. We will verify that
+we can pick the parameter $\chi$ so that $N=1$. Note that in steady
+state, $a=\exp\left(\mu_{A}\right)$, so (\ref{eq:Aggregate Production Technology})
+implies $y=\frac{Y}{A}=1$. Then $c=\frac{C}{A}=1-\eta_{G}$ and $g=\frac{G}{A}=\eta_{G}$.
+From (\ref{eq:Marginal Utility of Consumption}), $\lambda=\frac{\Lambda}{a^{-1}}=\left(\frac{C}{A}\right)^{-1}=c^{-1}$
+. Equation (\ref{eq:Optimal Pricing FONC 2}) implies that $s=\frac{\varepsilon-1}{\varepsilon}$,
+meaning that (\ref{eq:Real Marginal Cost}) implies that $\frac{W}{AP}=w=s/(1-\nu)$.
+Finally, use (\ref{eq:Labor Leisure Tradeoff}) to determine $\chi$.
+Note that you could also back out $m^{d}$ from (\ref{eq:Money Demand}).
+
+\section{Efficient Steady State}
+
+Consider a social planner who maximizes (\ref{eq:Preferences}) subject
+to (\ref{eq:Production Technology}) and (\ref{eq:Resource Constraint}).
+Set $\upsilon$ to zero so that we ignore money demand (this is the
+standard thing to do). It is easy to show that
+\[
+\chi\left(\frac{Y_{t}}{A_{t}}\right)^{\varphi}=\frac{A_{t}}{C_{t}}
+\]
+In steady state, this condition is equivalent to the steady state
+with $\pi=1$ so $p^{*}=1$ and where $\nu$ is set so that $w=1$. 
+
+\section{Linearization}
+
+For any variable $x_{t}$, define $\hat{x}_{t}\equiv\log\left(x_{t}/x\right)$,
+where $x$ is the steady state value of $x_{t}$. Note that equations
+(\ref{eq:Marginal Utility of Consumption}), (\ref{eq:Labor Leisure Tradeoff}),
+(\ref{eq:Intertemporal Euler Equation}), (\ref{eq:Real Marginal Cost}),
+(\ref{eq:Taylor Rule}), and (\ref{eq:Aggregate Production Technology}),
+are log-linear so that
+\begin{equation}
+-\hat{c}_{t}=\hat{\lambda}_{t}\label{eq:LL Marginal Utility of Consumption}
+\end{equation}
+\begin{equation}
+\varphi\hat{n}_{t}=\hat{\lambda}_{t}+\hat{w}_{t}\label{eq:LL Labor-Leisure Tradeoff}
+\end{equation}
+\begin{equation}
+\hat{\lambda}_{t}=\hat{\beta}_{t}+\hat{R}_{t}-E_{t}\hat{a}_{t+1}+E_{t}\hat{\lambda}_{t+1}-E_{t}\hat{\pi}_{t+1}\label{eq:LL Intertemporal Euler Equation}
+\end{equation}
+\begin{equation}
+\hat{w}_{t}=\hat{s}_{t}\label{eq:LL Real Marginal Cost}
+\end{equation}
+\begin{equation}
+\hat{R}_{t}=\phi_{\pi}\hat{\pi}_{t}+\epsilon_{R,t}\label{eq:LL Taylor Rule}
+\end{equation}
+\begin{equation}
+\hat{y}_{t}=\hat{p}_{t}^{*}+\hat{N}_{t}.\label{eq:LL Production Technology}
+\end{equation}
+The resource constraint, (\ref{eq:Resource Constraint}), is linearized
+to be
+\begin{equation}
+\hat{y}_{t}=\left(1-\eta_{G}\right)\hat{c}_{t}+\eta_{G}\hat{g}_{t}.\label{eq:LL Resource Constraint}
+\end{equation}
+The equation (\ref{eq:relationship between ptilde and inflation})
+implies
+\begin{equation}
+\hat{\tilde{p}}_{t}=\frac{\theta}{1-\theta}\hat{\pi}_{t}.\label{eq:LL relationship between ptilde and inflation}
+\end{equation}
+The equation (\ref{eq:pstar evolution}) implies
+\begin{equation}
+-\hat{p}_{t}^{*}=-\varepsilon\left(1-\theta\right)\hat{\tilde{p}}_{t}+\theta\left(\varepsilon\hat{\pi}_{t}-\hat{p}_{t-1}^{*}\right).\label{eq:LL pstar evolution}
+\end{equation}
+Finally, equation (\ref{eq:Optimal Pricing FONC 2}) can be linearized
+in the following way. First, linearize the term
+\[
+\left(\frac{\tilde{p}_{t}}{\Pi_{t,t+j}}-\frac{\varepsilon}{\varepsilon-1}s_{t+j}\right)\approx\hat{\tilde{p}}_{t}-\hat{\Pi}_{t,t+j}-\hat{s}_{t+j}=\hat{\tilde{p}}_{t}-\sum_{k=1}^{j}\hat{\pi}_{t+k}-\hat{s}_{t+j}
+\]
+where the equality follow from the definition of $\Pi_{t,t+j}$. Note
+that in steady state $1-\frac{\varepsilon}{\varepsilon-1}s=0$, so
+(\ref{eq:Optimal Pricing FONC 2}) can be expressed in log-linear
+form as 
+\[
+E_{t}\sum_{j=0}^{\infty}\left(\beta\theta\right)^{j}\left(\hat{\tilde{p}}_{t}-\sum_{k=1}^{j}\hat{\pi}_{t+k}-\hat{s}_{t+j}\right)=0.
+\]
+Now, write this as
+\begin{eqnarray}
+\hat{\tilde{p}}_{t} & = & \left(1-\beta\theta\right)E_{t}\sum_{j=0}^{\infty}\left(\beta\theta\right)^{j}\left[\sum_{k=1}^{j}\hat{\pi}_{t+k}+\hat{s}_{t+j}\right]\nonumber \\
+ & = & \left(1-\beta\theta\right)\hat{s}_{t}+\left(1-\beta\theta\right)E_{t}\sum_{j=1}^{\infty}\left(\beta\theta\right)^{j}\left[\sum_{k=1}^{j}\hat{\pi}_{t+k}+\hat{s}_{t+j}\right]\nonumber \\
+ & = & \left(1-\beta\theta\right)\hat{s}_{t}+\left(1-\beta\theta\right)E_{t}\sum_{j=0}^{\infty}\left(\beta\theta\right)^{j+1}\left[\sum_{k=1}^{j+1}\hat{\pi}_{t+k}+\hat{s}_{t+1+j}\right]\nonumber \\
+ & = & \left(1-\beta\theta\right)\hat{s}_{t}+\beta\xi\left(1-\beta\theta\right)E_{t}\sum_{j=0}^{\infty}\left(\beta\theta\right)^{j}\left[\hat{\pi}_{t+1}+\sum_{k=1}^{j}\hat{\pi}_{t+1+k}+\hat{s}_{t+1+j}\right]\nonumber \\
+ & = & \left(1-\beta\theta\right)\hat{s}_{t}+\beta\theta E_{t}\left(\hat{\pi}_{t+1}+\hat{\tilde{p}}_{t+1}\right).\label{eq:LL Optimal Pricing Decision}
+\end{eqnarray}
+
+\subsection{Simplification}
+
+Sub out $\hat{\lambda}_{t}$ using (\ref{eq:LL Marginal Utility of Consumption}),
+sub out $\hat{w}_{t}$ using (\ref{eq:LL Labor-Leisure Tradeoff}),
+sub out $\hat{y}_{t}$ using (\ref{eq:LL Resource Constraint}), sub
+out $\hat{s}_{t}$ using (\ref{eq:LL Real Marginal Cost}), and sub
+out $\hat{\tilde{p}}_{t}$ using (\ref{eq:LL relationship between ptilde and inflation})
+to get
+\[
+-\hat{c}_{t}=\hat{\beta}_{t}+\hat{R}_{t}-E_{t}\hat{a}_{t+1}-E_{t}\hat{c}_{t+1}-E_{t}\hat{\pi}_{t+1}
+\]
+\[
+\hat{R}_{t}=\phi_{\pi}\hat{\pi}_{t}+\epsilon_{R,t}
+\]
+\[
+\left(1-\eta_{G}\right)\hat{c}_{t}+\eta_{G}\hat{g}_{t}=\hat{p}_{t}^{*}+\hat{N}_{t}
+\]
+
+\[
+\hat{p}_{t}^{*}=\theta\hat{p}_{t-1}^{*}
+\]
+\[
+\hat{\pi}_{t}=\frac{\left(1-\beta\theta\right)\left(1-\theta\right)}{\beta}\left(\varphi\hat{N}_{t}+\hat{c}_{t}\right)+\beta E_{t}\hat{\pi}_{t+1}.
+\]
+Note that the fourth of these equations implies that $\hat{p}_{t}^{*}\rightarrow0$,
+so $p_{t}^{*}\approx1$ and $\hat{p}_{t}^{*}\approx0$. Sub out for
+$\hat{N}_{t}$ using the third equation and we have a 3-equation system:
+\begin{equation}
+-\hat{c}_{t}=\hat{\beta}_{t}+\hat{R}_{t}-E_{t}\hat{a}_{t+1}-E_{t}\hat{c}_{t+1}-E_{t}\hat{\pi}_{t+1},\label{eq:3-Equation NK IS}
+\end{equation}
+
+\begin{equation}
+\hat{\pi}_{t}=\frac{\left(1-\beta\theta\right)\left(1-\theta\right)}{\beta}\left(\left[\varphi\left(1-\eta_{G}\right)+1\right]\hat{c}_{t}+\varphi\eta_{G}\hat{g}_{t}\right)+\beta E_{t}\hat{\pi}_{t+1},\label{eq:3-Equation NK Phillips}
+\end{equation}
+\begin{equation}
+\hat{R}_{t}=\phi_{\pi}\hat{\pi}_{t}+\epsilon_{R,t}.\label{eq:3-Equation NK Policy Rule}
+\end{equation}
+
+\section{Piecewise-linear model}
+
+Let's ignore government spending shocks and monetary policy shocks.
+Let's also define $\hat{\eta}_{t}\equiv\hat{\beta}_{t}-E_{t}\hat{a}_{t+1}$.
+Then we have the 3-equation model that we have been using.
+\begin{equation}
+-\hat{c}_{t}=\hat{R}_{t}+\hat{\eta}_{t}-E_{t}\hat{c}_{t+1}-E_{t}\hat{\pi}_{t+1},\label{eq:PL NK IS}
+\end{equation}
+
+\begin{equation}
+\hat{\pi}_{t}=\frac{\left(1-\beta\theta\right)\left(1-\theta\right)}{\beta}\left(\left[\varphi\left(1-\eta_{G}\right)+1\right]\hat{c}_{t}\right)+\beta E_{t}\hat{\pi}_{t+1},\label{eq:PL NK Phillips}
+\end{equation}
+\begin{equation}
+\hat{R}_{t}=\max\left\{ \log\left(\frac{\beta}{a}\right),\phi_{\pi}\hat{\pi}_{t}\right\} \label{eq:PL Policy Rule}
+\end{equation}
+We could define an AR(1) process for $\hat{\eta}_{t}$ directly.
+
+\section{Natural Rates}
+
+Define the natural rates of aggregate variables to the (real) prices
+and and quantities that would prevail with no nominal rigidities.
+All prices are identical because firms are symmetric. So $p_{t}^{*}=1$
+and $\tilde{p}_{t}=1$. Equations (\ref{eq:LL Marginal Utility of Consumption})
+and (\ref{eq:LL Labor-Leisure Tradeoff}) are unchanged. The intertemporal
+Euler equation becomes
+\begin{equation}
+\hat{\lambda}_{t}=\hat{\beta}_{t}+\hat{r}_{t}^{*}-E_{t}\hat{a}_{t+1}+E_{t}\hat{\lambda}_{t+1}.\label{eq:LL Intertemporal Euler Equation natural}
+\end{equation}
+where $r_{t}^{*}$ is the natural rate of interest. Equation (\ref{eq:LL Real Marginal Cost})
+is unchanged. Aggregate production technology is given by
+\begin{equation}
+\hat{y}_{t}=\hat{N}_{t}.\label{eq:LL Production Technology natural}
+\end{equation}
+The resource constraint (\ref{eq:LL Resource Constraint}) is unchanged.
+Finally, firm optimality implies
+\begin{equation}
+\hat{s}_{t}=0\label{eq:LL Optimal Pricing Decision natural}
+\end{equation}
+The equations determining equilibrium are then
+\begin{equation}
+-\hat{c}_{t}=\hat{\beta}_{t}+\hat{r}_{t}^{*}-E_{t}\hat{a}_{t+1}-E_{t}\hat{c}_{t+1}\label{eq:Natural IS}
+\end{equation}
+\begin{equation}
+\varphi\left(\left(1-\eta_{G}\right)\hat{c}_{t}+\eta_{G}\hat{g}_{t}\right)=-\hat{c}_{t}\label{eq:Natural Phillips}
+\end{equation}
+Notice that if $\hat{\pi}_{t}=0$ and $\hat{R}_{t}=\hat{r}_{t}^{*}$,
+then (\ref{eq:3-Equation NK IS}) and (\ref{eq:3-Equation NK Phillips})
+are the same as (\ref{eq:Natural IS}) and (\ref{eq:Natural Phillips}).
+If we assume that we have linearized around the efficient steady state,
+then we have the first-order efficient allocations if $R_{t}=r_{t}^{*}$.
+Of course, and as is usual, we are ignoring money demand.
+
+\section{Simplified nonlinear model}
+
+First, write the non-linear equations in a form that is scaled by
+$A_{t}$.
+
+\[
+\chi N_{t}^{\varphi}=c_{t}^{-1}w_{t}
+\]
+\[
+1=\beta_{t}R_{t}E_{t}\frac{c_{t}}{a_{t+1}c_{t+1}\pi_{t+1}}
+\]
+\[
+w_{t}\left(1-\nu\right)=s_{t}
+\]
+\[
+F_{1,t}=c_{t}^{-1}y_{t}+\beta_{t}\theta E_{t}\pi_{t+1}^{\varepsilon-1}F_{1,t+1}
+\]
+\[
+F_{2,t}=c_{t}^{-1}y_{t}s_{t}\frac{\varepsilon}{\varepsilon-1}+\beta_{t}\theta E_{t}\pi_{t+1}^{\varepsilon}F_{1,t+1}
+\]
+\[
+F_{1,t}\tilde{p}_{t}=F_{2,t}
+\]
+\[
+R_{t}=\max\left\{ R\pi_{t}^{\phi_{\pi}}\exp\left(\epsilon_{R,t}\right),1\right\} 
+\]
+\[
+\tilde{p}_{t}=\left(\frac{1-\theta\pi_{t}^{\varepsilon-1}}{1-\theta}\right)^{\frac{1}{1-\varepsilon}}
+\]
+\[
+y_{t}=p_{t}^{*}N_{t}
+\]
+\[
+p_{t}^{*}=\left(\left(1-\theta\right)\tilde{p}_{t}^{-\varepsilon}+\theta\pi_{t}^{\varepsilon}\left(p_{t-1}^{*}\right)^{-1}\right)^{-1}
+\]
+\[
+c_{t}+g_{t}=y_{t}
+\]
+Next, simplify
+\[
+1=\beta_{t}R_{t}E_{t}\frac{c_{t}}{a_{t+1}c_{t+1}\pi_{t+1}}
+\]
+\[
+F_{1,t}=c_{t}^{-1}\left(c_{t}+g_{t}\right)+\beta_{t}\theta E_{t}\pi_{t+1}^{\varepsilon-1}F_{1,t+1}
+\]
+\[
+F_{2,t}=\chi\left(c_{t}+g_{t}\right)\left(\frac{c_{t}+g_{t}}{p_{t}^{\ast}}\right)^{\varphi}\left(1-\nu\right)\frac{\varepsilon}{\varepsilon-1}+\beta_{t}\theta E_{t}\pi_{t+1}^{\varepsilon}F_{1,t+1}
+\]
+\[
+F_{1,t}\left(\frac{1-\theta\pi_{t}^{\varepsilon-1}}{1-\theta}\right)^{\frac{1}{1-\varepsilon}}=F_{2,t}
+\]
+\[
+R_{t}=\max\left\{ R\pi_{t}^{\phi_{\pi}}\exp\left(\epsilon_{R,t}\right),1\right\} 
+\]
+\[
+p_{t}^{*}=\left(\left(1-\theta\right)\left(\frac{1-\theta\pi_{t}^{\varepsilon-1}}{1-\theta}\right)^{-\frac{\varepsilon}{1-\varepsilon}}+\theta\pi_{t}^{\varepsilon}\left(p_{t-1}^{*}\right)^{-1}\right)^{-1}
+\]
+
+\section{A simplified process for the discount rate}
+
+Assume that $\beta_{t}\in\left\{ \beta^{\ell},\beta\right\} $ and
+assume that $\beta$ is an absorbing state. When $\beta_{t}=\beta^{\ell},$
+the probability of switching to $\beta$ is $1-p$ . Assume there
+are no other shocks. Denote the outcomes when $\beta_{t}=\beta^{\ell}$
+by $x_{t}^{\ell}$. Denote the outcomes when $\beta_{t}=\beta$ by
+$x_{t}$. We can write the equation characterizing equilibrium as
+\[
+1=\frac{\beta^{\ell}}{a}\max\left\{ R\left(\pi_{t}^{\ell}\right)^{\phi_{\pi}},1\right\} \left[p\frac{c_{t}^{\ell}}{c_{t+1}^{\ell}\pi_{t+1}^{\ell}}+\left(1-p\right)\frac{c_{t}^{\ell}}{c_{t+1}\pi_{t+1}}\right]
+\]
+\[
+F_{1,t}^{\ell}=\left(c_{t}^{\ell}\right)^{-1}\left(c_{t}^{\ell}+g\right)+\beta^{\ell}\theta\left[p\left(\pi_{t+1}^{\ell}\right)^{\varepsilon-1}F_{1,t+1}^{\ell}+\left(1-p\right)\left(\pi_{t+1}\right)^{\varepsilon-1}F_{1,t+1}\right]
+\]
+\begin{align*}
+F_{1,t}^{\ell}\left(\frac{1-\theta\left(\pi_{t}^{\ell}\right)^{\varepsilon-1}}{1-\theta}\right)^{\frac{1}{1-\varepsilon}}= & \chi\left(c_{t}^{\ell}+g\right)\left(\frac{c_{t}^{\ell}+g}{p_{t}^{\ast}}\right)^{\varphi}\left(1-\nu\right)\frac{\varepsilon}{\varepsilon-1}\\
+ & +\beta^{\ell}\theta\left[p\left(\pi_{t+1}^{\ell}\right)^{\varepsilon}F_{1,t}^{\ell}\left(\frac{1-\theta\left(\pi_{t}^{\ell}\right)^{\varepsilon-1}}{1-\theta}\right)^{\frac{1}{1-\varepsilon}}+\left(1-p\right)\left(\pi_{t+1}\right)^{\varepsilon}F_{1,t+1}\left(\frac{1-\theta\pi_{t+1}^{\varepsilon-1}}{1-\theta}\right)^{\frac{1}{1-\varepsilon}}\right]
+\end{align*}
+\[
+p_{t}^{*}=\left(\left(1-\theta\right)\left(\frac{1-\theta\pi_{t}^{\varepsilon-1}}{1-\theta}\right)^{-\frac{\varepsilon}{1-\varepsilon}}+\theta\pi_{t}^{\varepsilon}\left(p_{t-1}^{*}\right)^{-1}\right)^{-1}
+\]
+One path in any equilibrium is the probability zero event that $\beta_{t}=\beta^{\ell}$
+forever. In that case, $p_{t}^{\ast}\rightarrow p^{\ast\ell}$, $\pi_{t}^{\ell}\rightarrow\pi^{\ell}$
+, $c_{t}^{\ell}\rightarrow c^{\ell}$, $F_{1,t}^{\ell}\rightarrow F_{1}^{\ell}$
+. Note that the model has no state variables other than $p_{t}^{\ast}$,
+so the $\pi_{t}$, $c_{t}$, $F_{1,t}$ are functions only of $p_{t}^{\ast}$.
+For a given $p^{\ast\ell}$, this is a set of numbers. We can check
+to see if there are limit points in the following way. Conjecture
+a guess of $\pi^{\ell}$ on the support of $\pi$ (from 0 to a calculable
+positive number. The number 1 is generally good enough for a high
+$\beta$ because we want ZLB equilibria). Give $\pi^{\ell}$ the fourth
+equation gives $p^{\ast\ell}$, which then gives us all of the $x_{t+1}$
+variables. The first equation gives us $c^{\ell}$. The second equation
+gives us $F_{1}^{\ell}$. The third equation can be checked to see
+if it equals zero. If it does, we have an equilibrium. If not, we
+do not have an equilibrium. We can check all values of $\pi^{\ell}$,
+meaning we can check for existence.
+\end{document}
