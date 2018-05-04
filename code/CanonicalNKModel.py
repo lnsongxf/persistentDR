@@ -1,21 +1,21 @@
 
 # coding: utf-8
 
-# In[2]:
+# In[1]:
 
 #set NK parameters and points for the x and y grid of the heatmap
 import numpy as np
 import canonical_nk as nk
 
 
-# In[3]:
+# In[30]:
 
 params_d = {'beta': 0.99, 'gamma_pi': 2.0, 'gamma_y': 0.0, 'kappa': 0.05, 'dpbar': 1.005}
 params = np.array(list(params_d.values()))
 
-Nrow = 100
-Ncol = 100
-ns = 51
+Nrow = 3
+Ncol = 4
+ns = 2
 eta = np.zeros(ns)
 
 mapswitch = 0
@@ -29,7 +29,7 @@ else:
     stdinnov = np.linspace(0.00025,0.0003,num=Nrow)
 
 
-# In[4]:
+# In[31]:
 
 #generate data for heatmap
 sol = np.zeros([Nrow,Ncol],dtype=int)
@@ -47,7 +47,18 @@ for i in np.arange(Ncol):
         (sol[j,i],yy,dp,notr,nomr) = nk.solve_model(eta,P,params,ns)
 
 
-# In[5]:
+# In[41]:
+
+import imp
+imp.reload(nk)
+
+
+# In[42]:
+
+nk.solve_case(eta,P,params,ns,1)
+
+
+# In[4]:
 
 import matplotlib.pyplot as plt
 if (mapswitch == 0):
@@ -62,7 +73,7 @@ plt.title('Solution Type (-1=No solution, 0=No Bind,1=One state binds,'         
 plt.show()
 
 
-# In[6]:
+# In[5]:
 
 #Get solution at point where model solves
 rho = 0.95
@@ -76,7 +87,7 @@ P = nk.transmat(ns,p,p)
 solution_type
 
 
-# In[7]:
+# In[6]:
 
 #Plot IRFs of linear and nonlinear model
 start = 3
@@ -97,9 +108,20 @@ axs2[1,1].set_title('Notional Rate')
 plt.show()
 
 
-# In[8]:
+# In[15]:
 
-100*eta.round(6)
+eta_psi
+
+
+# In[14]:
+
+pvec[0]-pvec[99]
+
+
+
+# In[16]:
+
+nk.transmat(3,.4,.3)
 
 
 # In[ ]:
