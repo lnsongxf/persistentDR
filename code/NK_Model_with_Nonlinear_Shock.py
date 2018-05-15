@@ -80,7 +80,7 @@ for i in np.arange(Ncol):
         (sol1[j,i],yy,dp,notr,nomr) = nk.solve_model(eta,P,params,ns)
 
 
-# In[4]:
+# In[5]:
 
 fig3, axs3 = plt.subplots(1, 1)
 pos = axs3.contourf(100.0*stdeta, rhoeta, sol1,extend='neither',                    levels=[-1.5,-0.5,0.5,ns],colors=('w','b','r'))
